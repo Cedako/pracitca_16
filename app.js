@@ -15,8 +15,9 @@ app.get('/person/:id', function(req,res){
 app.get('/student', (req, res) => {
     res.render('index');
 });
-//ruta student POST
+//ruta student POST -- parseamiento de json mediante express
 app.post('/studentjson', express.json({type: '*/*'}), (req, res) => {
+    //mediante la notación del punto se puede llamar a ciertos parametros del objeto
     console.log('El objeto contiene: ' , (req.body));
     console.log('Nombre: ' , (req.body.firstname));
     console.log('Apellido: ' , (req.body.lastname));
